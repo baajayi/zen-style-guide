@@ -1,0 +1,185 @@
+@keyframes orbit {
+  0%, 5% {
+    transform: translate(0, 0);
+  }
+  25%, 30% {
+    transform: translate(278%, 0);
+  }
+  50%, 55% {
+    transform: translate(278%, 278%);
+  }
+  75%, 80% {
+    transform: translate(0, 278%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes morphing-circle-square {
+  0%, 25% {
+    border-radius: 50%;
+  }
+  25% {
+    background-color: darkred;
+  }
+  50% {
+    border-radius: 0%;
+    background-color: white;
+    transform: rotate(0deg);
+  }
+  75% {
+    border-radius: 0%;
+    background-color: white;
+    transform: rotate(90deg);
+  }
+  100% {
+    border-radius: 50%;
+    background-color: darkred;
+    transform: rotate(90deg);
+  }
+}
+@keyframes break-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+  45% {
+    transform: translate3d(-55%, 0, 0);
+  }
+  50%, 75% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes break-right {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+  45% {
+    transform: translate3d(55%, 0, 0);
+  }
+  50%, 75% {
+    transform: translate3d(50%, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes heart {
+  0% {
+    transform: scale(1);
+  }
+  44%, 50%, 56% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  47%, 53% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  height: 50vmin;
+  width: 50vmin;
+  background-color: teal;
+}
+
+.container-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-four {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 12.5vmin;
+  height: 12.5vmin;
+  border-radius: 50%;
+  background-color: darkred;
+}
+
+.container-one {
+  padding: 2vmin;
+}
+
+.orbiting-circle {
+  animation: orbit 3s linear infinite;
+}
+
+.morphing-circle {
+  animation: morphing-circle-square 3s linear infinite;
+}
+
+.breaking-circle {
+  width: 12.5%;
+  height: 25%;
+  overflow: hidden;
+}
+
+.break-left {
+  animation: break-left 3s ease-in-out infinite;
+}
+.break-left:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: darkred;
+  transform: translate3d(0, 0, 0);
+}
+
+.break-right {
+  animation: break-right 3s ease-in-out infinite;
+}
+.break-right:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: darkred;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.heart-circle {
+  animation: heart 2s linear infinite;
+}
+
+/*# sourceMappingURL=styles.css.map */
